@@ -1,0 +1,18 @@
+Modifier Mania, a mod to change up what modifiers you get on weapons and accessories!
+
+I got sick of the modifiers (or prefixes, or reforges) that you see in vanilla Terraria as they've been there, minimally changed, since they were added in 1.1 (December of 2011).
+
+This mod aims to "overpopulate" the modifiers found when crafting or looting weapons and accessories. To recreate the feeling of not knowing what the best reforge is for your build or the feeling of getting lucky with a really good reforge at the beginning of the game.
+
+Content:
+- 31 Accessory Modifiers
+- x Weapon Modifiers
+    - x Melee Weapon Modifiers
+    - x Ranged Weapon Modifiers
+    - x Magic/Summon Weapon Modifiers
+    - x Universal Weapon Modifiers
+
+Changelog:
+v1.0: Initial mod release
+- Added x weapon modifiers
+- Added x accessory modifiers

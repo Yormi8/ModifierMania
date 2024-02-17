@@ -1,0 +1,36 @@
+Modifiers: {
+	Accessories: {
+		Tooltips: {
+			MeleeCritChance: "{0}% melee critical strike chance"
+			RangedCritChance: "{0}% ranged critical strike chance"
+			MagicCritChance: "{0}% magic critical strike chance"
+			MeleeDamage: "{0}% melee damage"
+			RangedDamage: "{0}% ranged damage"
+			MagicDamage: "{0}% magic damage"
+			SummonDamage: "{0}% summon damage"
+			RangedUseSpeed: "{0}% ranged speed"
+			MagicUseSpeed: "{0}% magic speed"
+			MiningSpeed: "{0}% mining speed"
+		}
+
+		Ancient.DisplayName: Ancient
+		Antique.DisplayName: Antique
+		Primordial.DisplayName: Primordial
+		Brave.DisplayName: Brave
+		Infallible.DisplayName: Infallible
+		Mystical.DisplayName: Mystical
+		Secure.DisplayName: Secure
+		Reinforced.DisplayName: Reinforced
+		Unshakeable.DisplayName: Unshakeable
+		Consistent.DisplayName: Consistent
+		Concordant.DisplayName: Concordant
+		Berserking.DisplayName: Berserking
+		Enraged.DisplayName: Enraged
+		Maddened.DisplayName: Maddened
+		Bloodthirsty.DisplayName: Bloodthirsty
+		Calculated.DisplayName: Calculated
+		Spellbound.DisplayName: Spellbound
+		Entrusting.DisplayName: Entrusting
+		Golden.DisplayName: Golden
+	}
+}

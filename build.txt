@@ -1,0 +1,3 @@
+displayName = Modifier Mania
+author = Yormi
+version = 1.0
