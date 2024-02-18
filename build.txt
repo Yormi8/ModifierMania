@@ -1,3 +1,4 @@
 displayName = Modifier Mania
 author = Yormi
 version = 1.0
+homepage = https://github.com/Yormi8/ModifierMania
