@@ -7,6 +7,7 @@ using System.Numerics;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.Localization;
+using Terraria.WorldBuilding;
 
 namespace ModifierMania.Modifiers.Accessories
 {
@@ -17,47 +18,121 @@ namespace ModifierMania.Modifiers.Accessories
         {
             public void Load(Mod mod)
             {
-                // Bad modifiers
-                mod.AddContent(new AccessoryModifier("Cursed", -1, 0, 0, 0, 0, [(DamageClass.Generic, -1)], [], []));
-                mod.AddContent(new AccessoryModifier("Hapless", -2, 0, 0, 0, 0, [(DamageClass.Generic, -2)], [], []));
-                mod.AddContent(new AccessoryModifier("Weakened", -1, 0, 0, 0, 0, [], [(DamageClass.Generic, -1)], []));
-                mod.AddContent(new AccessoryModifier("Soft", -2, 0, 0, 0, 0, [], [(DamageClass.Generic, -2)], []));
-                mod.AddContent(new AccessoryModifier("Vulnerable", -1, -1, 0, 0, 0, [], [], []));
-                mod.AddContent(new AccessoryModifier("Delicate", -2, -2, 0, 0, 0, [], [], []));
-                mod.AddContent(new AccessoryModifier("Hefty", -1, 0, -2, 0, 0, [], [], []));
-                mod.AddContent(new AccessoryModifier("Weighty", -2, 0, -4, 0, 0, [], [], []));
+                AccessoryModifier[] accessoryModifiers =
+                [
+                    // Bad modifiers
+                    new("Vulnerable",   -1, -1, 0, 0, 0, [], [], []),
+                    new("Delicate",     -2, -2, 0, 0, 0, [], [], []),
+                    new("Degenerative", -6, -4, 0, 0, 0, [], [], []),
 
-                // Single modifiers
-                mod.AddContent(new AccessoryModifier("Antique", 4, 0, 0, 0, 10, [], [], []));
-                mod.AddContent(new AccessoryModifier("Promising", 1, 0, 0, 0, 0, [(DamageClass.Generic, 1)], [], []));
-                mod.AddContent(new AccessoryModifier("Fortunate", 3, 0, 0, 0, 0, [(DamageClass.Generic, 3)], [], []));
+                    new("Cursed",    -1, 0, 0, 0, 0, [(DamageClass.Generic, -1)], [], []),
+                    new("Hapless",   -2, 0, 0, 0, 0, [(DamageClass.Generic, -2)], [], []),
+                    new("Ill-Fated", -6, 0, 0, 0, 0, [(DamageClass.Generic, -4)], [], []),
 
-                // Combination modifiers
-                mod.AddContent(new AccessoryModifier("Primordial", 6, 0, 2, 0, 10, [], [], []));
-                mod.AddContent(new AccessoryModifier("Brave", 3, 0, 0, 0, 0, [(DamageClass.Melee, 2)], [(DamageClass.Melee, 3)], []));
-                mod.AddContent(new AccessoryModifier("Infallible", 3, 0, 0, 0, 0, [(DamageClass.Ranged, 2)], [(DamageClass.Ranged, 3)], []));
-                mod.AddContent(new AccessoryModifier("Mystical", 3, 0, 0, 0, 0, [(DamageClass.Magic, 2)], [(DamageClass.Magic, 3)], []));
-                mod.AddContent(new AccessoryModifier("Conscious", 3, 0, 0, 20, 0, [], [(DamageClass.Magic, 3)], []));
+                    new("Weakened", -1, 0, 0, 0, 0, [], [(DamageClass.Generic, -1)], []),
+                    new("Soft",     -2, 0, 0, 0, 0, [], [(DamageClass.Generic, -2)], []),
+                    new("Yielding", -6, 0, 0, 0, 0, [], [(DamageClass.Generic, -4)], []),
 
-                // Tradeoff modifiers
-                mod.AddContent(new AccessoryModifier("Secure", 5, 5, 0, 0, 0, [], [(DamageClass.Generic, -2)], []));
-                mod.AddContent(new AccessoryModifier("Reinforced", 6, 6, 0, 0, 0, [], [(DamageClass.Generic, -4)], []));
-                mod.AddContent(new AccessoryModifier("Unshakeable", 7, 7, 0, 0, 0, [], [(DamageClass.Generic, -6)], []));
-                mod.AddContent(new AccessoryModifier("Consistent", 5, 5, 0, 0, 0, [(DamageClass.Generic, -2)], [], []));
-                mod.AddContent(new AccessoryModifier("Concordant", 6, 6, 0, 0, 0, [(DamageClass.Generic, -4)], [], []));
-                mod.AddContent(new AccessoryModifier("Inconsistent", 5, 0, 0, 0, 0, [(DamageClass.Generic, 5)], [(DamageClass.Generic, -2)], []));
-                mod.AddContent(new AccessoryModifier("Discordant", 6, 0, 0, 0, 0, [(DamageClass.Generic, 6)], [(DamageClass.Generic, -4)], []));
+                    new("Hefty",      -1, 0, -1, 0, 0, [], [], []),
+                    new("Weighty",    -2, 0, -2, 0, 0, [], [], []),
+                    new("Overweight", -6, 0, -4, 0, 0, [], [], []),
 
-                mod.AddContent(new AccessoryModifier("Berserking", 5, -1, 0, 0, 0, [], [(DamageClass.Generic, 5)], []));
-                mod.AddContent(new AccessoryModifier("Enraged", 6, -2, 0, 0, 0, [], [(DamageClass.Generic, 6)], []));
-                mod.AddContent(new AccessoryModifier("Maddened", 7, -3, 0, 0, 0, [], [(DamageClass.Generic, 7)], []));
+                    new("Tame",   -1, 0, 0, 0, 0, [], [], [(DamageClass.Melee, -1)]),
+                    new("Docile", -2, 0, 0, 0, 0, [], [], [(DamageClass.Melee, -2)]),
 
-                mod.AddContent(new AccessoryModifier("Bloodthirsty", 2, 0, 0, 0, 0, [], [(DamageClass.Melee,  4), (DamageClass.Ranged, -4), (DamageClass.Magic, -4), (DamageClass.Summon, -4)], []));
-                mod.AddContent(new AccessoryModifier("Calculated", 2, 0, 0, 0, 0, [],   [(DamageClass.Melee, -4), (DamageClass.Ranged,  4), (DamageClass.Magic, -4), (DamageClass.Summon, -4)], []));
-                mod.AddContent(new AccessoryModifier("Spellbound", 2, 0, 0, 0, 0, [],   [(DamageClass.Melee, -4), (DamageClass.Ranged, -4), (DamageClass.Magic,  4), (DamageClass.Summon, -4)], []));
-                mod.AddContent(new AccessoryModifier("Entrusting", 2, 0, 0, 0, 0, [],   [(DamageClass.Melee, -4), (DamageClass.Ranged, -4), (DamageClass.Magic, -4), (DamageClass.Summon,  4)], []));
+                    new("Drowsy",     -1, 0, 0, 0, 0, [], [], [(DamageClass.Ranged, -1)]),
+                    new("Motionless", -2, 0, 0, 0, 0, [], [], [(DamageClass.Ranged, -2)]),
 
-                mod.AddContent(new AccessoryModifier("Golden", 5, 1, 1, 0, 1, [(DamageClass.Generic, 1)], [(DamageClass.Generic, 1)], []));
+                    new("Lame",  -1, 0, 0, 0, 0, [], [], [(DamageClass.Magic, -1)]),
+                    new("Lousy", -2, 0, 0, 0, 0, [], [], [(DamageClass.Magic, -2)]),
+
+                    new("Hexed",      -3, 0, 0, -20, 0, [], [], []),
+                    new("Brain-Dead", -6, 0, 0, -40, 0, [], [], []),
+
+                    // Single modifiers
+                    new("Antique", 4, 0, 0, 0, 10, [], [], []),
+
+                    new("Promising", 1, 0, 0, 0, 0, [(DamageClass.Generic, 1)], [], []),
+                    new("Fortunate", 3, 0, 0, 0, 0, [(DamageClass.Generic, 3)], [], []),
+
+                    new("Occult", 6, 0, 0, 40, 0, [], [], []),
+
+                    // Combination modifiers
+                    new("Primordial", 6, 0, 2, 0, 10, [], [], []),
+
+                    new("Brave",      3, 0, 0, 0, 0, [(DamageClass.Melee, 2)], [(DamageClass.Melee, 3)], []),
+                    new("Infallible", 3, 0, 0, 0, 0, [(DamageClass.Ranged, 2)], [(DamageClass.Ranged, 3)], []),
+                    new("Mystical",   3, 0, 0, 0, 0, [(DamageClass.Magic, 2)], [(DamageClass.Magic, 3)], []),
+
+                    new("Conscious", 3, 0, 0, 20, 0, [], [(DamageClass.Magic, 3)], []),
+
+                    new("Rushing", 2, 0, 1, 0, 0, [], [(DamageClass.Generic, 1)], []),
+                    new("Swift",   4, 0, 2, 0, 0, [], [(DamageClass.Generic, 2)], []),
+
+                    new("Scurvy",    2, 0, 0, 0, 0, [], [(DamageClass.Melee, 3), (DamageClass.Ranged, 3)], []),
+                    new("Clercial",  2, 0, 0, 0, 0, [], [(DamageClass.Melee, 3), (DamageClass.Magic, 3)], []),
+                    new("Stalking",  2, 0, 0, 0, 0, [], [(DamageClass.Melee, 3), (DamageClass.Summon, 3)], []),
+                    new("Aberrant",  2, 0, 0, 0, 0, [], [(DamageClass.Ranged, 3), (DamageClass.Magic, 3)], []),
+                    new("Ambushing", 2, 0, 0, 0, 0, [], [(DamageClass.Ranged, 3), (DamageClass.Summon, 3)], []),
+                    new("Bizarre",   2, 0, 0, 0, 0, [], [(DamageClass.Magic, 3), (DamageClass.Summon, 3)], []),
+
+                    new("Hot",     3, 0, 1, 0, 0, [], [], [(DamageClass.Melee, 2)]),
+                    new("Burning", 5, 0, 2, 0, 0, [], [], [(DamageClass.Melee, 3)]),
+
+                    new("Smart",    4, 0, 0, 20, 0, [(DamageClass.Magic, 2)], [], []),
+                    new("Nerdy",    4, 0, 0, 20, 0, [], [(DamageClass.Magic, 2)], []),
+                    new("Studious", 4, 0, 0, 20, 0, [], [], [(DamageClass.Magic, 2)]),
+
+                    new("Thriving", 3, 0, 0, 0, 0, [(DamageClass.Melee, 1)], [(DamageClass.Melee, 1)], [(DamageClass.Melee, 1)]),
+                    new("Vigorous", 3, 0, 0, 0, 0, [(DamageClass.Ranged, 1)], [(DamageClass.Ranged, 1)], [(DamageClass.Ranged, 1)]),
+                    new("Educated", 3, 0, 0, 0, 0, [(DamageClass.Magic, 1)], [(DamageClass.Magic, 1)], [(DamageClass.Magic, 1)]),
+                    new("Friendly", 3, 1, 0, 0, 0, [], [(DamageClass.Summon, 2)], []),
+
+                    // Tradeoff modifiers
+                    new("Secure",      5, 5, 0, 0, 0, [], [(DamageClass.Generic, -2)], []),
+                    new("Reinforced",  6, 6, 0, 0, 0, [], [(DamageClass.Generic, -4)], []),
+                    new("Unshakeable", 7, 7, 0, 0, 0, [], [(DamageClass.Generic, -6)], []),
+
+                    new("Consistent", 5, 5, 0, 0, 0, [(DamageClass.Generic, -2)], [], []),
+                    new("Concordant", 6, 6, 0, 0, 0, [(DamageClass.Generic, -4)], [], []),
+
+                    new("Inconsistent", 5, 0, 0, 0, 0, [(DamageClass.Generic, 5)], [(DamageClass.Generic, -2)], []),
+                    new("Discordant",   6, 0, 0, 0, 0, [(DamageClass.Generic, 6)], [(DamageClass.Generic, -4)], []),
+
+                    new("Berserking", 5, -1, 0, 0, 0, [], [(DamageClass.Generic, 5)], []),
+                    new("Enraged",    6, -2, 0, 0, 0, [], [(DamageClass.Generic, 6)], []),
+                    new("Maddened",   7, -3, 0, 0, 0, [], [(DamageClass.Generic, 7)], []),
+
+                    new("Bloodthirsty", 2, 0, 0, 0, 0, [], [(DamageClass.Melee, 4), (DamageClass.Ranged, -4), (DamageClass.Magic, -4), (DamageClass.Summon, -4)], []),
+                    new("Calculated",   2, 0, 0, 0, 0, [], [(DamageClass.Melee, -4), (DamageClass.Ranged, 4), (DamageClass.Magic, -4), (DamageClass.Summon, -4)], []),
+                    new("Spellbound",   2, 0, 0, 0, 0, [], [(DamageClass.Melee, -4), (DamageClass.Ranged, -4), (DamageClass.Magic, 4), (DamageClass.Summon, -4)], []),
+                    new("Entrusting",   2, 0, 0, 0, 0, [], [(DamageClass.Melee, -4), (DamageClass.Ranged, -4), (DamageClass.Magic, -4), (DamageClass.Summon, 4)], []),
+
+                    new("Solitary",   4, 0,  0, 0, 0, [(DamageClass.Magic, 3)], [(DamageClass.Magic, 3), (DamageClass.Summon, -10)], []),
+                    new("Watchful",   4, 0, 0, 0, 0, [(DamageClass.Ranged, 3), (DamageClass.Magic, -6)], [(DamageClass.Ranged, 3), (DamageClass.Magic, -6)], []),
+                    new("Airtight",   4, 0, 0, 0, 0, [(DamageClass.Melee, 3), (DamageClass.Ranged, -6)], [(DamageClass.Melee, 3), (DamageClass.Ranged, -6)], []),
+                    new("Neighborly", 4, 3, 0, 0, 0, [(DamageClass.Magic, -6)], [(DamageClass.Summon, 3), (DamageClass.Magic, -6)], []),
+
+                    new("Peaceable",  2, 4, 0, 0, 0, [(DamageClass.Melee, -2)], [(DamageClass.Melee, -2)], []),
+                    new("Oncoming",   2, 4, 0, 0, 0, [(DamageClass.Ranged, -2)], [(DamageClass.Ranged, -2)], []),
+                    new("Scientific", 2, 4, 0, 0, 0, [(DamageClass.Magic, -2)], [(DamageClass.Magic, -2)], []),
+                    new("Individual", 2, 4, 0, 0, 0, [], [(DamageClass.Summon, -4)], []),
+
+                    new("Heavy-Duty", 3, 0, 0, 0, 0, [], [(DamageClass.Melee, 6)], [(DamageClass.Melee, -4)]),
+                    new("Weighted",   3, 0, 0, 0, 0, [], [(DamageClass.Ranged, 6)], [(DamageClass.Ranged, -4)]),
+                    new("Tricky",     3, 0, 0, 0, 0, [], [(DamageClass.Magic, 6)], [(DamageClass.Magic, -4)]),
+
+                    new("Guessable", 5, 0, 0, 0, 0, [(DamageClass.Generic, -12)], [(DamageClass.Generic, 8)], []),
+                    new("Gambling",  5, 0, 0, 0, 0, [(DamageClass.Generic, 8)], [(DamageClass.Generic, -12)], []),
+
+                    // Super modifiers
+                    new("Golden", 5, 1, 1, 0, 1, [(DamageClass.Generic, 1)], [(DamageClass.Generic, 1)], []),
+                ];
+
+                foreach (var modifier in accessoryModifiers)
+                {
+                    mod.AddContent(modifier);
+                }
             }
 
             public void Unload()
