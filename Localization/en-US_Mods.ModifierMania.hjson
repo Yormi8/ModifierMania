@@ -13,24 +13,80 @@ Modifiers: {
 			MiningSpeed: "{0}% mining speed"
 		}
 
+		Aberrant.DisplayName: Aberrant
+		Airtight.DisplayName: Airtight
+		Ambushing.DisplayName: Ambushing
 		Ancient.DisplayName: Ancient
 		Antique.DisplayName: Antique
-		Primordial.DisplayName: Primordial
-		Brave.DisplayName: Brave
-		Infallible.DisplayName: Infallible
-		Mystical.DisplayName: Mystical
-		Secure.DisplayName: Secure
-		Reinforced.DisplayName: Reinforced
-		Unshakeable.DisplayName: Unshakeable
-		Consistent.DisplayName: Consistent
-		Concordant.DisplayName: Concordant
 		Berserking.DisplayName: Berserking
-		Enraged.DisplayName: Enraged
-		Maddened.DisplayName: Maddened
+		Bizarre.DisplayName: Bizarre
 		Bloodthirsty.DisplayName: Bloodthirsty
+		Brain-Dead.DisplayName: Brain-Dead
+		Brave.DisplayName: Brave
+		Burning.DisplayName: Burning
 		Calculated.DisplayName: Calculated
-		Spellbound.DisplayName: Spellbound
+		Clercial.DisplayName: Clercial
+		Concordant.DisplayName: Concordant
+		Conscious.DisplayName: Conscious
+		Consistent.DisplayName: Consistent
+		Cursed.DisplayName: Cursed
+		Degenerative.DisplayName: Degenerative
+		Delicate.DisplayName: Delicate
+		Discordant.DisplayName: Discordant
+		Docile.DisplayName: Docile
+		Drowsy.DisplayName: Drowsy
+		Educated.DisplayName: Educated
+		Enraged.DisplayName: Enraged
 		Entrusting.DisplayName: Entrusting
+		Fortunate.DisplayName: Fortunate
+		Friendly.DisplayName: Friendly
+		Gambling.DisplayName: Gambling
 		Golden.DisplayName: Golden
+		Guessable.DisplayName: Guessable
+		Hapless.DisplayName: Hapless
+		Heavy-Duty.DisplayName: Heavy-Duty
+		Hefty.DisplayName: Hefty
+		Hexed.DisplayName: Hexed
+		Hot.DisplayName: Hot
+		Ill-Fated.DisplayName: Ill-Fated
+		Inconsistent.DisplayName: Inconsistent
+		Individual.DisplayName: Individual
+		Infallible.DisplayName: Infallible
+		Lame.DisplayName: Lame
+		Lousy.DisplayName: Lousy
+		Maddened.DisplayName: Maddened
+		Motionless.DisplayName: Motionless
+		Mystical.DisplayName: Mystical
+		Neighborly.DisplayName: Neighborly
+		Nerdy.DisplayName: Nerdy
+		Occult.DisplayName: Occult
+		Oncoming.DisplayName: Oncoming
+		Overweight.DisplayName: Overweight
+		Peaceable.DisplayName: Peaceable
+		Primordial.DisplayName: Primordial
+		Promising.DisplayName: Promising
+		Reinforced.DisplayName: Reinforced
+		Rushing.DisplayName: Rushing
+		Scientific.DisplayName: Scientific
+		Scurvy.DisplayName: Scurvy
+		Secure.DisplayName: Secure
+		Smart.DisplayName: Smart
+		Soft.DisplayName: Soft
+		Solitary.DisplayName: Solitary
+		Spellbound.DisplayName: Spellbound
+		Stalking.DisplayName: Stalking
+		Studious.DisplayName: Studious
+		Swift.DisplayName: Swift
+		Tame.DisplayName: Tame
+		Thriving.DisplayName: Thriving
+		Tricky.DisplayName: Tricky
+		Unshakeable.DisplayName: Unshakeable
+		Vigorous.DisplayName: Vigorous
+		Vulnerable.DisplayName: Vulnerable
+		Watchful.DisplayName: Watchful
+		Weakened.DisplayName: Weakened
+		Weighted.DisplayName: Weighted
+		Weighty.DisplayName: Weighty
+		Yielding.DisplayName: Yielding
 	}
 }
